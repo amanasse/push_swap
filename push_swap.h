@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:06:24 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/13 12:29:52 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/13 14:06:16 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		ft_lstsize(t_list *lst);
 
 //tri de 2 a 5 :
 
-void	ft_pars(t_list **a);
+void	ft_pars(t_list **a, t_list **b);
 void	push_swap_2(t_list *a);
 void	push_swap_3(t_list **a);
 void 	push_swap_4(t_list **a, t_list **b);
@@ -78,6 +78,9 @@ void	ft_pa(t_list **a, t_list **b);
 void	ft_pb(t_list **a, t_list **b);
 void	push(t_list **pile, int content);
 int		pop(t_list **pile);
+
+//algo :
+int		find_min(t_list *a, int size);
 
 
 

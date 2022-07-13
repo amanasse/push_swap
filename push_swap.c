@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:06:56 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/13 12:09:55 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/13 14:10:23 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 int	main(int argc, char **argv)
 {
 	t_list	*a;
-	t_list *tmp;
-	// t_list	*b;
+	t_list	*tmp;
+	t_list	*b;
+
 	a = 0;
+	b = 0;
 	if (argc >= 2)
 	{
 		if (argc == 2)
@@ -31,7 +33,7 @@ int	main(int argc, char **argv)
 			return (0);
 	}
 
-	ft_pars(&a);
+	ft_pars(&a, &b);
 	tmp = a;
 	while (tmp != NULL)
 	{

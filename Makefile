@@ -5,6 +5,7 @@ SRCS    = 	ft_split.c\
 			utils_lst.c\
 			utils_lst2.c\
 			utils_init_a.c\
+			utils_algo.c\
 			swap_2_to_5.c\
 			operations/operation_swap.c\
 			operations/operation_reverse.c\
