@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:33:23 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/13 14:06:37 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/14 15:51:26 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	ft_doublon(t_list *a)
 		{
 			if (a->content == temp->content)
 			{
-				//ft_lstclear(a, free);
 				write(2, "Error\n", 6);
 				return ;
 			}

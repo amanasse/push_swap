@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 13:43:04 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/14 14:17:19 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/14 15:53:58 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ void	ft_pars(t_list **a, t_list **b)
 		if (ft_lstsize(*a) == 5)
 			push_swap_5(a, b);
 	}
-	else	
+	else
 		return ;
 }

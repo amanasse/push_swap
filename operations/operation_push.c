@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 16:24:12 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/13 12:29:51 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/14 16:12:42 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	pop(t_list **pile)
 {
-	int	content;
+	int		content;
 	t_list	*first;
 
 	content = 0;
 	first = *pile;
 	content = first->content;
 	*pile = first->next;
-	free(first);
+	free (first);
 	return (content);
 }
 
@@ -43,12 +43,12 @@ void	ft_pb(t_list **a, t_list **b)
 
 void	push(t_list **pile, int content)
 {
-    t_list *new;
+	t_list	*new;
 
 	new = malloc(sizeof(*new));
-    if (new == NULL)
-       return ;
-    new->content = content;
-    new->next = *pile;
-    *pile = new;
+	if (new == NULL)
+		return ;
+	new->content = content;
+	new->next = *pile;
+	*pile = new;
 }

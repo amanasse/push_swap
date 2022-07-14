@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 16:20:54 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/13 12:14:02 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/14 16:15:52 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 //le dernier devient le premier 
 void	ft_rra(t_list **a)
 {
-	int	size;
 	t_list	*temp;
-	int	i;
+	int		size;
+	int		i;
 
 	i = 1;
 	temp = *a;
@@ -34,9 +34,9 @@ void	ft_rra(t_list **a)
 
 void	ft_rrb(t_list **b)
 {
-	int	size;
 	t_list	*temp;
-	int	i;
+	int		size;
+	int		i;
 
 	i = 0;
 	temp = *b;

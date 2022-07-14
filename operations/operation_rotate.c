@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 16:19:44 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/13 12:16:06 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/14 16:27:27 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	ft_ra(t_list **a)
 {
 	t_list	*first;
-	
+
 	first = *a;
 	first->content = pop(a);
 	ft_lstadd_back(a, first);
@@ -27,7 +27,7 @@ void	ft_ra(t_list **a)
 void	ft_rb(t_list **b)
 {
 	t_list	*first;
-	
+
 	first = *b;
 	first->content = pop(b);
 	ft_lstadd_back(b, first);

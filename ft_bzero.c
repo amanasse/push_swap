@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 11:45:07 by amanasse          #+#    #+#             */
-/*   Updated: 2022/06/28 12:26:09 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/14 15:49:30 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, int n)
 {
-	int		i;
+	int			i;
 	char		*str;
 
 	i = 0;

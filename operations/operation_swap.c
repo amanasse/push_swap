@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:57:27 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/13 14:08:40 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/14 15:59:10 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_sa(t_list *a)
 	a = tmp;
 	write (1, "sa\n", 3);
 }
+
 void	ft_sb(t_list *b)
 {
 	t_list	*tmp;

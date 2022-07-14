@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:06:24 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/14 14:29:28 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/14 15:49:16 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,15 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
-int 	tri_a_faire(t_list *a);
-
+int		tri_a_faire(t_list *a);
 
 //tri de 2 a 5 :
 
 void	ft_pars(t_list **a, t_list **b);
 void	push_swap_2(t_list *a);
 void	push_swap_3(t_list **a);
-void 	push_swap_4(t_list **a, t_list **b);
-void 	push_swap_5(t_list **a, t_list **b);
+void	push_swap_4(t_list **a, t_list **b);
+void	push_swap_5(t_list **a, t_list **b);
 
 //calculs :
 
@@ -84,11 +83,8 @@ int		pop(t_list **pile);
 //algo :
 
 void	ft_view_a(t_list *a);
-void 	ft_view_b(t_list *b);
-int		find_min(t_list *a, int size);
-void 	opti_division(t_list **a, int size, int count_min);
-
-
-
+void	ft_view_b(t_list *b);
+int		find_min(t_list *a);
+void	opti_division(t_list **a, int size, int count_min);
 
 #endif
