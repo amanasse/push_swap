@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:06:24 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/14 15:49:16 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/15 14:20:57 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	ft_rrr(t_list **a, t_list **b);
 void	ft_pa(t_list **a, t_list **b);
 void	ft_pb(t_list **a, t_list **b);
 void	push(t_list **pile, int content);
-int		pop(t_list **pile);
+// int		pop(t_list **pile);
 
 //algo :
 

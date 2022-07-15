@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 16:24:12 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/14 16:12:42 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/15 15:20:32 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@ int	pop(t_list **pile)
 {
 	int		content;
 	t_list	*first;
+	t_list	*tmp;
+
 
 	content = 0;
 	first = *pile;
 	content = first->content;
+	tmp = first;
 	*pile = first->next;
-	free (first);
+	free(tmp);
 	return (content);
 }
 

@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 13:44:00 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/14 16:29:06 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/15 13:35:56 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ int	find_min(t_list *a)
 		i++;
 		tmp = tmp->next;
 	}
-	free(a);
 	return (count);
 }
 
