@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:22:04 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/13 14:06:26 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/18 13:15:20 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,15 @@ void	ft_make_a_split(t_list **a, char **argv)
 	{
 		if (check_tab(tab[i]) == 0)
 			return ;
-		else
-		{
-			ft_lstadd_back(a, ft_lstnew(ft_atoi(tab[i])));
-			free(tab[i]);
-		}
 		i++;
 	}
-	ft_doublon(*a);
+	i = 0;
+	while (tab[i])
+	{
+		ft_lstadd_back(a, ft_lstnew(ft_atoi(tab[i])));
+		free(tab[i]);
+		i++;
+	}
 	free(tab);
 }
 
@@ -94,8 +95,12 @@ void	ft_make_a_av(t_list **a, char **argv)
 	{
 		if (check_tab(argv[i]) == 0)
 			return ;
+		i++;
+	}
+	i = 1;
+	while (argv[i])
+	{
 		ft_lstadd_back(a, ft_lstnew(ft_atoi(argv[i])));
 		i++;
 	}
-	ft_doublon(*a);
 }

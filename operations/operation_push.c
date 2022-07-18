@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 16:24:12 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/15 15:20:32 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/18 12:57:59 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	pop(t_list **pile)
 	int		content;
 	t_list	*first;
 	t_list	*tmp;
-
 
 	content = 0;
 	first = *pile;
@@ -48,10 +47,7 @@ void	push(t_list **pile, int content)
 {
 	t_list	*new;
 
-	new = malloc(sizeof(*new));
-	if (new == NULL)
-		return ;
-	new->content = content;
+	new = ft_lstnew(content);
 	new->next = *pile;
 	*pile = new;
 }

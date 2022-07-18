@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:48:45 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/14 15:56:04 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/18 12:57:01 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,15 @@ void	push_swap_2(t_list *a)
 
 void	push_swap_3(t_list **a)
 {
-	if ((*a)->content > (*a)->next->content)
+	if ((*a)->content < (*a)->next->content)
+	{
+		if ((*a)->next->content < (*a)->next->next->content)
+			return ;
+		ft_rra(a);
+		if ((*a)->content > (*a)->next->content)
+			ft_sa(*a);
+	}
+	else if ((*a)->content > (*a)->next->content)
 	{
 		if ((*a)->next->content > (*a)->next->next->content)
 		{
@@ -35,38 +43,27 @@ void	push_swap_3(t_list **a)
 				ft_ra(a);
 		}
 	}
-	else if ((*a)->content < (*a)->next->content)
+}
+
+void	push_swap_4_to_20(t_list **a, t_list **b)
+{
+	int	count_min;
+	int	size;
+	int	size_tmp;
+
+	size_tmp = ft_lstsize(*a);
+	size = ft_lstsize(*a);
+	while (size > 3)
 	{
-		if ((*a)->next->content < (*a)->next->next->content)
-			return ;
-		ft_rra(a);
-		if ((*a)->content > (*a)->next->content)
-			ft_sa(*a);
+		count_min = find_min(*a);
+		opti_division(a, ft_lstsize(*a), count_min);
+		ft_pb(a, b);
+		size--;
 	}
-}
-
-void	push_swap_4(t_list **a, t_list **b)
-{
-	int	count_min;
-
-	count_min = find_min(*a);
-	opti_division(a, ft_lstsize(*a), count_min);
-	ft_pb(a, b);
 	push_swap_3(a);
-	ft_pa(a, b);
-}
-
-void	push_swap_5(t_list **a, t_list **b)
-{
-	int	count_min;
-
-	count_min = find_min(*a);
-	opti_division(a, ft_lstsize(*a), count_min);
-	ft_pb(a, b);
-	count_min = find_min(*a);
-	opti_division(a, ft_lstsize(*a), count_min);
-	ft_pb(a, b);
-	push_swap_3(a);
-	ft_pa(a, b);
-	ft_pa(a, b);
+	while (size < size_tmp)
+	{
+		ft_pa(a, b);
+		size++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:33:23 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/15 13:36:42 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/18 13:12:21 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_list	*ft_lstnew(int content)
 	return (element);
 }
 
-void	ft_doublon(t_list *a)
+int	ft_doublon(t_list *a)
 {
 	t_list	*temp;
 
@@ -37,10 +37,23 @@ void	ft_doublon(t_list *a)
 			if (a->content == temp->content)
 			{
 				write(2, "Error\n", 6);
-				return ;
+				return (0);
 			}
 			temp = temp->next;
 		}
 		a = a->next;
+	}
+	return (1);
+}
+
+void	free_lst(t_list *a)
+{
+	t_list	*tmp;
+
+	while (a != NULL)
+	{
+		tmp = a;
+		a = a->next;
+		free(tmp);
 	}
 }

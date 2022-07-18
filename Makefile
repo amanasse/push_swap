@@ -10,8 +10,7 @@ SRCS    = 	ft_split.c\
 			operations/operation_swap.c\
 			operations/operation_reverse.c\
 			operations/operation_rotate.c\
-			operations/operation_push.c\
-			ft_view.c
+			operations/operation_push.c
 
 OBJS	= ${SRCS:.c=.o}
 HEADERS	= "push_swap.h"
