@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:06:24 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/18 13:12:27 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/18 17:54:23 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_pars(t_list **a, t_list **b);
 void	push_swap_2(t_list *a);
 void	push_swap_3(t_list **a);
 void	push_swap_4_to_20(t_list **a, t_list **b);
-void	push_swap_5(t_list **a, t_list **b);
+void	push_swap_21_to_1000(t_list **a, t_list **b);
 
 //calculs :
 
@@ -86,6 +86,10 @@ int		pop(t_list **pile);
 void	ft_view_a(t_list *a);
 void	ft_view_b(t_list *b);
 int		find_min(t_list *a);
+int		find_max(t_list *a);
 void	opti_division(t_list **a, int size, int count_min);
+int		nombre_pivot(t_list **a, int size);
+
+
 
 #endif

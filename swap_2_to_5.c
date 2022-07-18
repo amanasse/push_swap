@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:48:45 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/18 12:57:01 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/18 18:30:23 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,38 @@ void	push_swap_4_to_20(t_list **a, t_list **b)
 	{
 		ft_pa(a, b);
 		size++;
+	}
+}
+
+void	push_swap_21_to_1000(t_list **a, t_list **b)
+{
+	int	nb_pivot;
+	int	size;
+	int	i;
+	int	count_max;
+
+	i = 0;
+	size = ft_lstsize(*a);
+	nb_pivot = nombre_pivot((a), size);
+	printf("pivot = %d\n", nb_pivot);
+	while (i < size)
+	{
+		if ((*a)->content <= nb_pivot)
+			ft_pb(a, b);
+		else if ((*a)->content > nb_pivot)
+			ft_ra(a);
+		i++;
+	}
+	ft_view_a(*a);
+	ft_view_b(*b);
+	if (ft_lstsize(*a) > 2)
+		push_swap_21_to_1000(a, b);
+	size = ft_lstsize(*b);
+	while (size > 0)
+	{
+		count_max = find_max(*b);
+		opti_division(b, ft_lstsize(*b), count_max);
+		ft_pa(a, b);
+		size--;
 	}
 }

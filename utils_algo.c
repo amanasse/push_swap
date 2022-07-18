@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 13:44:00 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/15 13:35:56 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/18 17:53:38 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,29 @@ int	find_min(t_list *a)
 	return (count);
 }
 
+int	find_max(t_list *a)
+{
+	int		max;
+	int		i;
+	int		count;
+	t_list	*tmp;
+
+	i = 0;
+	count = 0;
+	tmp = a;
+	max = tmp->content;
+	while (tmp != NULL)
+	{
+		if (tmp->content > max)
+		{
+			max = tmp->content;
+			count = i;
+		}
+		i++;
+		tmp = tmp->next;
+	}
+	return (count);
+}
 void	opti_division(t_list **a, int size, int count_min)
 {
 	if (count_min <= size / 2)
@@ -65,4 +88,20 @@ void	opti_division(t_list **a, int size, int count_min)
 			count_min++;
 		}
 	}
+}
+
+int	nombre_pivot(t_list **a, int size)
+{
+	t_list	*tmp;
+	int		resultat;
+
+	tmp = *a;
+	resultat = 0;
+	while (tmp != NULL)
+	{
+		resultat += tmp->content;
+		tmp = tmp->next;
+	}
+	resultat = resultat / size;
+	return (resultat);
 }
