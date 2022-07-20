@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:06:56 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/18 18:24:16 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/20 19:41:11 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_view_a(t_list *a)
     i = 1;
     while (a != NULL)
     {
-	    printf("a[%d] = %d. Son adresse : %p\n", i, a->content, a);
+	    printf("a[%d] = %ld. Son adresse : %p\n", i, a->content, a);
 		a = a->next;
 		i++;
 	}
@@ -33,7 +33,7 @@ void ft_view_b(t_list *b)
 	i = 1;
 	while (b != NULL)
 	{
-		printf("b[%d] = %d. Son adresse : %p\n", i, b->content, b);
+		printf("b[%d] = %ld. Son adresse : %p\n", i, b->content, b);
 		b = b->next;
 		i++;
 	}
@@ -64,7 +64,7 @@ int	main(int argc, char **argv)
 		ft_pars(&a, &b);
 		
 		// printf("FINAL\n");
-		// ft_view_a(a);
+		ft_view_a(a);
 		// ft_view_b(b);
 		free_lst(a);
 		free_lst(b);

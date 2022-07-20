@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:06:24 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/18 17:54:23 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/20 18:33:55 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <strings.h>
 # include <ctype.h>
 # include <unistd.h>
+# include <limits.h>
 
 // typedef struct s_ope 
 // {
@@ -28,7 +29,7 @@
 
 typedef struct s_list
 {
-	int				content;
+	long int		content;
 	struct s_list	*next;
 	int				size;
 }					t_list;
@@ -36,13 +37,14 @@ typedef struct s_list
 void	ft_bzero(void *s, int n);
 char	**ft_split(char const *s);
 int		ft_count_words(char *str);
-int		ft_atoi(char *nptr);
+long	ft_atoi(char *nptr);
 
 void	ft_make_a_split(t_list **a, char **argv);
 void	ft_make_a_av(t_list **a, char **argv);
 int		check_tab(char *str);
 int		ft_doublon(t_list *a);
 void	free_split(char **tab, int count);
+int		check_errors(char **tab);
 
 //listes chainees :
 
@@ -87,8 +89,10 @@ void	ft_view_a(t_list *a);
 void	ft_view_b(t_list *b);
 int		find_min(t_list *a);
 int		find_max(t_list *a);
-void	opti_division(t_list **a, int size, int count_min);
+void	opti_division_a(t_list **a, int size, int count_min);
+void	opti_division_b(t_list **a, int size, int count_min);
 int		nombre_pivot(t_list **a, int size);
+void	empty_pile_a (t_list **a, t_list **b);
 
 
 

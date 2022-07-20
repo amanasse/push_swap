@@ -6,23 +6,21 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:22:04 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/18 13:15:20 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/20 18:37:32 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(char *nptr)
+long	ft_atoi(char *str)
 {
 	long int	i;
 	long int	nb;
 	int			neg;
-	char		*str;
 
 	i = 0;
 	nb = 0;
 	neg = 1;
-	str = (char *)nptr;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
 	if (str[i] == '+' || str[i] == '-')
@@ -35,8 +33,11 @@ int	ft_atoi(char *nptr)
 	{
 		nb = (nb * 10) + (str[i] - 48);
 		i++;
-	}	
-	return (nb * neg);
+	}
+	nb = nb * neg;
+	if (nb > INT_MAX || nb < -INT_MAX - 1)
+		return (2147483649);
+	return (nb);
 }
 
 int	check_tab(char *str)
@@ -47,17 +48,11 @@ int	check_tab(char *str)
 	if (str[0] == '-' || str[0] == '+')
 		i++;
 	if (str[i] == '\0')
-	{
-		write(2, "Error\n", 6);
 		return (0);
-	}
 	while (str[i])
 	{
 		if (str[i] > 57 || str[i] < 48)
-		{
-			write(2, "Error\n", 6);
 			return (0);
-		}
 		i++;
 	}
 	return (1);
@@ -65,18 +60,13 @@ int	check_tab(char *str)
 
 void	ft_make_a_split(t_list **a, char **argv)
 {
-	char	**tab;
-	int		i;
+	char		**tab;
+	int			i;
 
 	i = 0;
 	tab = ft_split(argv[1]);
-	while (tab[i])
-	{
-		if (check_tab(tab[i]) == 0)
-			return ;
-		i++;
-	}
-	i = 0;
+	if (check_errors(tab) == 0)
+		return ;
 	while (tab[i])
 	{
 		ft_lstadd_back(a, ft_lstnew(ft_atoi(tab[i])));
@@ -89,12 +79,17 @@ void	ft_make_a_split(t_list **a, char **argv)
 void	ft_make_a_av(t_list **a, char **argv)
 {
 	int		i;
+	long	u;
 
 	i = 1;
 	while (argv[i])
 	{
-		if (check_tab(argv[i]) == 0)
+		u = ft_atoi(argv[i]);
+		if (check_tab(argv[i]) == 0 || u == 2147483649)
+		{
+			write(2, "Error\n", 6);
 			return ;
+		}
 		i++;
 	}
 	i = 1;
@@ -103,4 +98,30 @@ void	ft_make_a_av(t_list **a, char **argv)
 		ft_lstadd_back(a, ft_lstnew(ft_atoi(argv[i])));
 		i++;
 	}
+}
+
+int	check_errors(char **tab)
+{
+	int i;
+	long u;
+
+	i = 0;
+	while (tab[i])
+	{
+		u = ft_atoi(tab[i]);
+		if (check_tab(tab[i]) == 0 || u == 2147483649)
+			{
+				i = 0;
+				while (tab[i])
+				{
+					free(tab[i]);
+					i++;
+				}
+				free (tab);
+				write(2, "Error\n", 6);
+				return (0);
+			}
+		i++;
+	}
+	return (1);
 }
