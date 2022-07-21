@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 13:44:00 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/18 17:53:38 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/21 17:19:38 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,44 @@ int	find_min(t_list *a)
 	return (count);
 }
 
+int	find_min2(t_list *a)
+{
+	int		min;
+	int		min2;
+	int		i;
+	int		count;
+	t_list	*tmp;
+	t_list	*tmp2;
+
+	i = 0;
+	count = 0;
+	tmp = a;
+	min = tmp->content;
+	min2 = tmp->content;
+	while (tmp != NULL)
+	{
+		if (tmp->content < min)
+		{
+			min = tmp->content;
+			count = i;
+		}
+		i++;
+		tmp = tmp->next;
+	}
+	count = 0;
+	while (tmp2 != NULL)
+	{
+		if (tmp2->content < min2 && tmp2->content != min)
+		{
+			min2 = tmp->content;
+			count = i;
+		}
+		i++;
+		tmp2 = tmp2->next;
+	}
+	printf("min2 = [%d]\n", min2);
+	return (count);
+}
 int	find_max(t_list *a)
 {
 	int		max;
@@ -69,25 +107,6 @@ int	find_max(t_list *a)
 		tmp = tmp->next;
 	}
 	return (count);
-}
-void	opti_division(t_list **a, int size, int count_min)
-{
-	if (count_min <= size / 2)
-	{
-		while (count_min > 0)
-		{
-			ft_ra(a);
-			count_min--;
-		}
-	}
-	else
-	{
-		while (count_min < ft_lstsize(*a))
-		{
-			ft_rra(a);
-			count_min++;
-		}
-	}
 }
 
 int	nombre_pivot(t_list **a, int size)

@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 14:47:55 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/20 19:39:57 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/21 17:21:52 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,25 @@ void	empty_pile_a (t_list **a, t_list **b)
 	{
 		if ((*a)->content <= nb_pivot)
 			ft_pb(a, b);
-		else if ((*a)->content > nb_pivot)
+		else
 			ft_ra(a);
 		i++;
 	}
 	if (ft_lstsize(*a) > 2)
 		empty_pile_a(a, b);
+}
+
+void	empty_pile_test (t_list **a, t_list **b)
+{
+	int count_min;
+	int count_min2;
+
+	(void)b;
+    count_min = find_min(*a);
+	count_min2 = find_min2(*a);
+	printf("count_min = [%d]\n", count_min);
+	printf("count_min2 = [%d]\n", count_min2);
+
 }
 
 void	opti_division_a(t_list **a, int size, int count_min)

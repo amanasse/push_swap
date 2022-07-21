@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:06:24 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/20 18:33:55 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/21 17:02:29 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@
 
 typedef struct s_list
 {
-	long int		content;
+	long int		content;	
 	struct s_list	*next;
-	int				size;
+	struct s_list	*prev;
+	int				count_next;
+	int				count_prev;
 }					t_list;
 
 void	ft_bzero(void *s, int n);
@@ -56,13 +58,14 @@ int		ft_lstsize(t_list *lst);
 int		tri_a_faire(t_list *a);
 void	free_lst(t_list *a);
 
-//tri de 2 a 5 :
+//tri :
 
 void	ft_pars(t_list **a, t_list **b);
 void	push_swap_2(t_list *a);
 void	push_swap_3(t_list **a);
 void	push_swap_4_to_20(t_list **a, t_list **b);
-void	push_swap_21_to_1000(t_list **a, t_list **b);
+void	push_swap_21_to_100(t_list **a, t_list **b);
+void	push_swap_101_to_infinity(t_list **a, t_list **b);
 
 //calculs :
 
@@ -88,11 +91,13 @@ int		pop(t_list **pile);
 void	ft_view_a(t_list *a);
 void	ft_view_b(t_list *b);
 int		find_min(t_list *a);
+int		find_min2(t_list *a);
 int		find_max(t_list *a);
 void	opti_division_a(t_list **a, int size, int count_min);
 void	opti_division_b(t_list **a, int size, int count_min);
 int		nombre_pivot(t_list **a, int size);
 void	empty_pile_a (t_list **a, t_list **b);
+void	empty_pile_test (t_list **a, t_list **b);
 
 
 
