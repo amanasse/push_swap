@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 14:47:55 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/21 17:21:52 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/25 12:07:35 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,27 @@ void	empty_pile_test (t_list **a, t_list **b)
 {
 	int count_min;
 	int count_min2;
+	int	size;
 
-	(void)b;
-    count_min = find_min(*a);
-	count_min2 = find_min2(*a);
-	printf("count_min = [%d]\n", count_min);
-	printf("count_min2 = [%d]\n", count_min2);
-
+	size = ft_lstsize(*a);
+	while (size > 3)
+	{
+		count_min = find_min(*a);
+		count_min2 = find_min2(*a);
+		if (count_min < count_min2)
+		{
+			opti_division_a(a, ft_lstsize(*a), count_min);
+			ft_pb(a, b);
+			size--;
+		}
+		else
+		{
+			opti_division_a(a, ft_lstsize(*a), count_min2);
+			ft_pb(a, b);
+			size--;
+		}
+	}
+	push_swap_3(a);
 }
 
 void	opti_division_a(t_list **a, int size, int count_min)
