@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:06:56 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/25 16:21:08 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/27 12:06:14 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	main(int argc, char **argv)
 	t_list	*b;
 
 	a = 0;
-	b = 0;
+	b = NULL;
 	if (argc >= 2)
 	{
 		if (argc == 2)
@@ -82,6 +82,7 @@ int	main(int argc, char **argv)
 	    // printf("a->prev. Son adresse : %p\n", a->prev);
 		// ft_view_a(a);
 		// ft_rra(&a);
+		ft_pb(&a, &b);
 		ft_pb(&a, &b);
 		ft_pb(&a, &b);
 		// printf("a = %ld. Son adresse : %p\n", a->content, a);

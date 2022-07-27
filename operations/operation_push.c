@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 16:24:12 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/25 16:27:25 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/27 12:29:00 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	push(t_list **pile, int content)
 	new = ft_lstnew(content);
 	new->next = *pile;
 	new->prev = NULL;
-	printf("TEST\n");
+	if(*pile != NULL)
+		(*pile)->prev = new; 
 	*pile = new;
-	(*pile)->prev = NULL; 
 }
