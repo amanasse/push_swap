@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 13:44:00 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/25 13:00:06 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/27 15:04:36 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ int	find_min2(t_list *a)
 		i++;
 		tmp = tmp->next;
 	}
-	// printf("min = [%d]\n", min);
 	i = 0;
 	count = 0;
 	while (tmp2 != NULL)
@@ -85,9 +84,9 @@ int	find_min2(t_list *a)
 		i++;
 		tmp2 = tmp2->next;
 	}
-	// printf("min2 = [%d]\n", min2);
 	return (count);
 }
+
 int	find_max(t_list *a)
 {
 	int		max;

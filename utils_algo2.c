@@ -6,22 +6,22 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 14:47:55 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/25 12:07:35 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/27 15:15:12 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	empty_pile_a (t_list **a, t_list **b)
+void	empty_pile_a(t_list **a, t_list **b)
 {
-    int	nb_pivot;
+	int	nb_pivot;
 	int	size;
 	int	i;
-	
+
 	i = 0;
 	size = ft_lstsize(*a);
 	nb_pivot = nombre_pivot((a), size);
-    while (i < size)
+	while (i < size)
 	{
 		if ((*a)->content <= nb_pivot)
 			ft_pb(a, b);
@@ -33,10 +33,10 @@ void	empty_pile_a (t_list **a, t_list **b)
 		empty_pile_a(a, b);
 }
 
-void	empty_pile_test (t_list **a, t_list **b)
+void	empty_pile_test(t_list **a, t_list **b)
 {
-	int count_min;
-	int count_min2;
+	int	count_min;
+	int	count_min2;
 	int	size;
 
 	size = ft_lstsize(*a);

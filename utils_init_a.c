@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:22:04 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/25 13:59:33 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/27 15:06:44 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,25 +100,25 @@ void	ft_make_a_av(t_list **a, char **argv)
 
 int	check_errors(char **tab)
 {
-	int i;
-	long u;
+	int		i;
+	long	u;
 
 	i = 0;
 	while (tab[i])
 	{
 		u = ft_atoi(tab[i]);
 		if (check_tab(tab[i]) == 0 || u > 2147483647 || u < -2147483648)
+		{
+			i = 0;
+			while (tab[i])
 			{
-				i = 0;
-				while (tab[i])
-				{
-					free(tab[i]);
-					i++;
-				}
-				free (tab);
-				write(2, "Error\n", 6);
-				return (0);
+				free(tab[i]);
+				i++;
 			}
+			free (tab);
+			write(2, "Error\n", 6);
+			return (0);
+		}
 		i++;
 	}
 	return (1);

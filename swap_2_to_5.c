@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:48:45 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/25 12:06:35 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/27 15:11:28 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	push_swap_4_to_20(t_list **a, t_list **b)
 	size = ft_lstsize(*a);
 	while (size > 3)
 	{
-	// tmp = a;
 		count_min = find_min(*a);
 		opti_division_a(a, ft_lstsize(*a), count_min);
 		ft_pb(a, b);
@@ -73,11 +72,8 @@ void	push_swap_21_to_100(t_list **a, t_list **b)
 {
 	int	size;
 	int	count_max;
-	// printf("pivot = %d\n", nb_pivot);
 
 	empty_pile_a (a, b);
-	// ft_view_a(*a);
-	// ft_view_b(*b);
 	size = ft_lstsize(*b);
 	while (size > 0)
 	{
@@ -92,9 +88,8 @@ void	push_swap_101_to_infinity(t_list **a, t_list **b)
 {
 	int	size;
 	int	count_max;
-	// printf("pivot = %d\n", nb_pivot);
 
-	empty_pile_test (a, b);
+	empty_pile_test(a, b);
 	size = ft_lstsize(*b);
 	while (size > 0)
 	{
