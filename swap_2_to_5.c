@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:48:45 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/27 15:11:28 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/27 17:58:50 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,12 +90,24 @@ void	push_swap_101_to_infinity(t_list **a, t_list **b)
 	int	count_max;
 
 	empty_pile_test(a, b);
+	push_swap_3(a);
 	size = ft_lstsize(*b);
-	while (size > 0)
+	while (size > 0 && ft_lstsize(*b) > 0)
 	{
-		count_max = find_max(*b);
-		opti_division_b(b, ft_lstsize(*b), count_max);
-		ft_pa(a, b);
+		if (ft_lstsize(*b) < ft_lstsize(*a))
+		{
+			empty_pile_test(b, a);
+			push_swap_3(b);
+			ft_pa(a, b);
+			ft_pa(a, b);
+			ft_pa(a, b);
+		}
+		else
+		{
+			count_max = find_max(*b);
+			opti_division_b(b, ft_lstsize(*b), count_max);
+			ft_pa(a, b);
+		}
 		size--;
 	}
 }

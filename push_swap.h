@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:06:24 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/27 15:01:48 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/27 17:10:30 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,8 @@ void	opti_division_b(t_list **a, int size, int count_min);
 int		nombre_pivot(t_list **a, int size);
 void	empty_pile_a(t_list **a, t_list **b);
 void	empty_pile_test(t_list **a, t_list **b);
+int		count_min_next(t_list **a, int nb_pivot);
+int		count_min_prev(t_list **a, int nb_pivot);
+int		check_pivot(t_list **a, int nb_pivot);
 
 #endif

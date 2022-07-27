@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 13:43:04 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/25 13:35:23 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/27 17:59:24 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,17 @@ void	ft_pars(t_list **a, t_list **b)
 		if (ft_lstsize(*a) == 3)
 			push_swap_3(a);
 		if (ft_lstsize(*a) >= 4 && ft_lstsize(*a) <= 20)
-			push_swap_4_to_20(a, b);
+			push_swap_101_to_infinity(a, b);
+			// push_swap_4_to_20(a, b);
 		if (ft_lstsize(*a) >= 21 && ft_lstsize(*a) <= 100)
-			push_swap_21_to_100(a, b);
+		{
+			push_swap_101_to_infinity(a, b);
+		}
+			// printf("DEBUG\n");
+			// push_swap_21_to_100(a, b);
 		if (ft_lstsize(*a) >= 101)
 			push_swap_101_to_infinity(a, b);
+			// push_swap_21_to_100(a, b);
 	}
 	else
 		return ;

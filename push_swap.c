@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:06:56 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/27 14:53:34 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/07/27 18:01:37 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ int	main(int argc, char **argv)
 			free_lst(a);
 			return (0);
 		}
-		printf("FINAL\n");
 		ft_pars(&a, &b);
+		// printf("FINAL\n");
 		ft_view_a(a);
 		// ft_view_b(b);
 		free_lst(a);
