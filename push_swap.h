@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:06:24 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/27 17:10:30 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/08/01 16:05:25 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,14 +92,18 @@ void	ft_view_a(t_list *a);
 void	ft_view_b(t_list *b);
 int		find_min(t_list *a);
 int		find_min2(t_list *a);
+int		find_count_max(t_list *a);
+int		find_count_max2(t_list *a);
 int		find_max(t_list *a);
 void	opti_division_a(t_list **a, int size, int count_min);
 void	opti_division_b(t_list **a, int size, int count_min);
 int		nombre_pivot(t_list **a, int size);
 void	empty_pile_a(t_list **a, t_list **b);
-void	empty_pile_test(t_list **a, t_list **b);
+void	empty_pile_test(t_list **a, t_list **b, int nb_pivot);
 int		count_min_next(t_list **a, int nb_pivot);
 int		count_min_prev(t_list **a, int nb_pivot);
 int		check_pivot(t_list **a, int nb_pivot);
+void	empty_pile_b_return(t_list **a, t_list **b);
+int		*list_in_tab(t_list **a, int size);
 
 #endif
