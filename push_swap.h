@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:06:24 by amanasse          #+#    #+#             */
-/*   Updated: 2022/08/01 16:05:25 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/08/02 15:00:57 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,6 @@
 # include <unistd.h>
 # include <limits.h>
 
-// typedef struct s_ope 
-// {
-//   	int	count;
-// } 					t_ope;
-
 typedef struct s_list
 {
 	long int		content;	
@@ -36,7 +31,6 @@ typedef struct s_list
 	int				count_prev;
 }					t_list;
 
-void	ft_bzero(void *s, int n);
 char	**ft_split(char const *s);
 int		ft_count_words(char *str);
 long	ft_atoi(char *nptr);
@@ -99,11 +93,12 @@ void	opti_division_a(t_list **a, int size, int count_min);
 void	opti_division_b(t_list **a, int size, int count_min);
 int		nombre_pivot(t_list **a, int size);
 void	empty_pile_a(t_list **a, t_list **b);
-void	empty_pile_test(t_list **a, t_list **b, int nb_pivot);
+void	empty_pile_test(t_list **a, t_list **b, int nb_pivot, int size);
 int		count_min_next(t_list **a, int nb_pivot);
 int		count_min_prev(t_list **a, int nb_pivot);
 int		check_pivot(t_list **a, int nb_pivot);
 void	empty_pile_b_return(t_list **a, t_list **b);
 int		*list_in_tab(t_list **a, int size);
-
+void	ft_median_100(t_list **a, t_list **b, int stock_tab_median);
+void	ft_median_500(t_list **a, t_list **b, int stock_tab_median);
 #endif

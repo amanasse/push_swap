@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:48:45 by amanasse          #+#    #+#             */
-/*   Updated: 2022/08/01 17:52:22 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/08/02 11:46:42 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,80 +71,35 @@ void	push_swap_4_to_20(t_list **a, t_list **b)
 void	push_swap_21_to_100(t_list **a, t_list **b)
 {
 	int	size;
-	int stock_tab_median;
+	int	stock_tab_median;
 	int	count_max;
-	int *tab;
-	int new_mediane;
-	int i;
 
-	i = 0;
 	stock_tab_median = ft_lstsize(*a) / 5;
-	while (i < 5)
-	{
-		tab = list_in_tab(a, ft_lstsize(*a));
-		if (tab == NULL)
-			return ;
-		new_mediane = tab[stock_tab_median];
-		if(new_mediane == 0)
-		{
-			size = ft_lstsize(*a);
-			while (size > 0)
-			{
-				ft_pb(a, b);
-				size --;
-			}
-			break ;
-		}
-		empty_pile_test(a, b, new_mediane);
-		i++;
-	}
+	ft_median_100(a, b, stock_tab_median);
 	size = ft_lstsize(*b);
 	while (size > 0)
 	{
-			count_max = find_count_max(*b);
-			opti_division_b(b, ft_lstsize(*b), count_max);
-			ft_pa(a, b);
-			size--;
+		count_max = find_count_max(*b);
+		opti_division_b(b, ft_lstsize(*b), count_max);
+		ft_pa(a, b);
+		size--;
 	}
 }
-
 
 void	push_swap_101_to_infinity(t_list **a, t_list **b)
 {
 	int	size;
-	int stock_tab_median;
+	int	stock_tab_median;
 	int	count_max;
-	int *tab;
-	int new_mediane;
-	int i;
 
-	i = 0;
 	stock_tab_median = ft_lstsize(*a) / 11;
-	while (i < 11)
-	{
-		tab = list_in_tab(a, ft_lstsize(*a));
-		if (tab == NULL)
-			return ;
-		new_mediane = tab[stock_tab_median];
-		if(new_mediane == 0)
-		{
-			size = ft_lstsize(*a);
-			while (size > 0)
-			{
-				ft_pb(a, b);
-				size --;
-			}
-			break ;
-		}
-		empty_pile_test(a, b, new_mediane);
-		i++;
-	}
+	ft_median_500(a, b, stock_tab_median);
 	size = ft_lstsize(*b);
 	while (size > 0)
 	{
-			count_max = find_count_max(*b);
-			opti_division_b(b, ft_lstsize(*b), count_max);
-			ft_pa(a, b);
-			size--;
+		count_max = find_count_max(*b);
+		opti_division_b(b, ft_lstsize(*b), count_max);
+		ft_pa(a, b);
+		size--;
 	}
 }

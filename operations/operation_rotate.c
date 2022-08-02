@@ -6,13 +6,12 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 16:19:44 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/20 19:40:07 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/08/02 15:14:46 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-//le premier devient le dernier 
 void	ft_ra(t_list **a)
 {
 	t_list	*first;

@@ -6,11 +6,39 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 14:45:46 by amanasse          #+#    #+#             */
-/*   Updated: 2022/08/01 18:38:52 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/08/02 11:40:49 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	empty_pile_test(t_list **a, t_list **b, int nb_pivot, int size)
+{
+	int	count_next;
+	int	count_prev;
+	int	i;
+
+	i = -1;
+	while (++i < size && check_pivot(a, nb_pivot) == 1)
+	{
+		count_next = count_min_next(a, nb_pivot);
+		count_prev = count_min_prev(a, nb_pivot);
+		if (count_next == 0)
+			ft_pb(a, b);
+		else if (count_next <= count_prev)
+		{
+			while (count_next-- > 0)
+				ft_ra(a);
+			ft_pb(a, b);
+		}
+		else if (count_prev < count_next)
+		{
+			while (count_prev-- > -1)
+				ft_rra(a);
+			ft_pb(a, b);
+		}
+	}
+}
 
 void	ft_sort_int_tab(int *tab, int size)
 {	

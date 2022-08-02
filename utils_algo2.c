@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 14:47:55 by amanasse          #+#    #+#             */
-/*   Updated: 2022/08/01 18:38:56 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/08/02 15:16:33 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,43 +24,6 @@ int	check_pivot(t_list **a, int nb_pivot)
 		tmp = tmp->next;
 	}
 	return (0);
-}
-
-void	empty_pile_test(t_list **a, t_list **b, int nb_pivot)
-{
-	int	count_next;
-	int	count_prev;
-	int	size;
-	int	i;
-
-	i = 0;
-	size = ft_lstsize(*a);
-	while (i < size && check_pivot(a, nb_pivot) == 1 && nb_pivot != 0)
-	{
-		count_next = count_min_next(a, nb_pivot);
-		count_prev = count_min_prev(a, nb_pivot);
-		if (count_next == 0)
-			ft_pb(a, b);
-		else if (count_next <= count_prev)
-		{
-			while (count_next > 0)
-			{
-				ft_ra(a);
-				count_next--;
-			}
-			ft_pb(a, b);
-		}
-		else if (count_prev < count_next)
-		{
-			while (count_prev > -1)
-			{
-				ft_rra(a);
-				count_prev--;
-			}
-			ft_pb(a, b);
-		}
-		i++;
-	}
 }
 
 void	opti_division_a(t_list **a, int size, int count_min)
@@ -100,5 +63,61 @@ void	opti_division_b(t_list **a, int size, int count_min)
 			ft_rrb(a);
 			count_min++;
 		}
+	}
+}
+
+void	ft_median_100(t_list **a, t_list **b, int stock_tab_median)
+{
+	int	i;
+	int	*tab;
+	int	new_mediane;
+
+	i = -1;
+	while (++i < 5 && a != NULL)
+	{
+		tab = list_in_tab(a, ft_lstsize(*a));
+		if (tab == NULL)
+			return ;
+		if (ft_lstsize(*a) > stock_tab_median)
+		{
+			new_mediane = tab[stock_tab_median];
+			free(tab);
+		}
+		else
+		{
+			while (ft_lstsize(*a) > 0)
+				ft_pb(a, b);
+			free(tab);
+			break ;
+		}
+		empty_pile_test(a, b, new_mediane, ft_lstsize(*a));
+	}
+}
+
+void	ft_median_500(t_list **a, t_list **b, int stock_tab_median)
+{
+	int	i;
+	int	*tab;
+	int	new_mediane;
+
+	i = -1;
+	while (++i < 11 && a != NULL)
+	{
+		tab = list_in_tab(a, ft_lstsize(*a));
+		if (tab == NULL)
+			return ;
+		if (ft_lstsize(*a) > stock_tab_median)
+		{
+			new_mediane = tab[stock_tab_median];
+			free(tab);
+		}
+		else
+		{
+			while (ft_lstsize(*a) > 0)
+				ft_pb(a, b);
+			free(tab);
+			break ;
+		}
+		empty_pile_test(a, b, new_mediane, ft_lstsize(*a));
 	}
 }
