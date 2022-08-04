@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:33:23 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/27 15:08:05 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/08/03 11:24:48 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ int	ft_doublon(t_list *a)
 {
 	t_list	*temp;
 
+	if (a == NULL)
+	{
+		write(2, "Error\n", 6);
+		return (0);
+	}
 	while (a->next != NULL)
 	{
 		temp = a->next;

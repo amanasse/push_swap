@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 11:22:04 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/27 15:06:44 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/08/03 12:24:06 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,18 @@ void	ft_make_a_split(t_list **a, char **argv)
 {
 	char		**tab;
 	int			i;
+	t_list		*content;
 
 	i = 0;
 	tab = ft_split(argv[1]);
-	if (check_errors(tab) == 0)
+	if (tab == NULL || check_errors(tab) == 0)
 		return ;
 	while (tab[i])
 	{
-		ft_lstadd_back(a, ft_lstnew(ft_atoi(tab[i])));
+		content = ft_lstnew(ft_atoi(tab[i]));
+		if (content == NULL)
+			return ;
+		ft_lstadd_back(a, content);
 		free(tab[i]);
 		i++;
 	}
@@ -78,6 +82,7 @@ void	ft_make_a_av(t_list **a, char **argv)
 {
 	int		i;
 	long	u;
+	t_list	*content;
 
 	i = 1;
 	while (argv[i])
@@ -93,7 +98,10 @@ void	ft_make_a_av(t_list **a, char **argv)
 	i = 1;
 	while (argv[i])
 	{
-		ft_lstadd_back(a, ft_lstnew(ft_atoi(argv[i])));
+		content = ft_lstnew(ft_atoi(argv[i]));
+		if (content == NULL)
+			return ;
+		ft_lstadd_back(a, content);
 		i++;
 	}
 }

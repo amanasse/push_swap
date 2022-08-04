@@ -6,18 +6,11 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 14:20:33 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/12 11:37:54 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/08/03 15:12:27 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static int	my_check_sep(char c)
-{
-	if (c == ' ')
-		return (1);
-	return (0);
-}
 
 static int	my_contword(char *str)
 {
@@ -30,9 +23,9 @@ static int	my_contword(char *str)
 	word = 0;
 	while (str[i])
 	{
-		if (my_check_sep(str[i]) == 1)
+		if (str[i] == ' ')
 			indic = 1;
-		if (my_check_sep(str[i]) == 0 && indic == 1)
+		if (str[i] != ' ' && indic == 1)
 		{
 			word++;
 			indic = 0;
@@ -76,7 +69,7 @@ static char	**my_make_tab(char *str, char **tab, int m)
 	j = -1;
 	while (++i < m)
 	{
-		while (str[i] && my_check_sep(str[i]) == 0 && ++w)
+		while (str[i] && str[i] != ' ' && ++w)
 		{
 			indic = 1;
 			i++;
@@ -92,38 +85,41 @@ static char	**my_make_tab(char *str, char **tab, int m)
 	return (tab);
 }
 
+static void	free_tab(char **tab, int count_words)
+{
+	int	i;
+
+	i = 0;
+	while (i < count_words)
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+	tab = NULL;
+}
+
 char	**ft_split(char const *s)
 {
 	char	**tab;
 	int		i;
+	int		count_words;
 
 	i = 0;
+	count_words = my_contword((char *)s);
 	while (s[i] != '\0')
 		i++;
-	tab = malloc(sizeof(char *) * (my_contword((char *)s) + 1));
+	tab = malloc(sizeof(char *) * (count_words + 1));
 	if (tab == NULL)
 		return (NULL);
 	tab = my_make_tab((char *)s, tab, i);
+	i = 0;
+	while (tab[i])
+		i++;
+	if (i != count_words)
+	{
+		free_tab(tab, count_words);
+		return (NULL);
+	}
 	return (tab);
 }
-
-/*
-int main()
-{
-	char str1[] = "lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-	Sed non risus. Suspendisse";
-	char c = ' ';
-    char **tab;
-	int i;
-	
-	
-	i = 0;
-    tab = ft_split(str1, c);
-    while (tab[i])
-    {
-        printf("tab[%d] = [%s]\n", i, tab[i]);
-        i++;
-    }
-    return (0);
-}
-*/

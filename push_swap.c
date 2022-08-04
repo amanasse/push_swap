@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 16:06:56 by amanasse          #+#    #+#             */
-/*   Updated: 2022/08/02 14:52:38 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/08/03 14:56:33 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	t_list	*a;
 	t_list	*b;
 
-	a = 0;
+	a = NULL;
 	b = NULL;
 	if (argc >= 2)
 	{

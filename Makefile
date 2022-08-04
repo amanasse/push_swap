@@ -1,7 +1,6 @@
 SRCS    = 	ft_split.c\
 			push_swap.c\
 			ft_pars.c\
-			ft_bzero.c\
 			utils_lst.c\
 			utils_lst2.c\
 			utils_init_a.c\

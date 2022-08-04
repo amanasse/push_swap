@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 10:46:02 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/27 18:03:39 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/08/03 11:12:28 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 	{
 		last = ft_lstlast(*lst);
+		if (last == NULL)
+			return ;
 		last->next = new;
 		new->prev = last;
 	}

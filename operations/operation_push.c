@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 16:24:12 by amanasse          #+#    #+#             */
-/*   Updated: 2022/07/27 15:09:23 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/08/03 11:18:42 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	push(t_list **pile, int content)
 	t_list	*new;
 
 	new = ft_lstnew(content);
+	if (new == NULL)
+		return ;
 	new->next = *pile;
 	new->prev = NULL;
 	if (*pile != NULL)
